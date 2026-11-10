@@ -1,0 +1,346 @@
+<title>Ivan Petar Šolić</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<meta name="description" content="Ivan Petar Šolić — software developer, backend (C#/.NET, Java/Spring Boot). Zagreb.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:wght@400;500;600&family=Space+Grotesk:wght@500;600;700&display=swap">
+<style>
+/* Layout: single readable column, left-aligned; sticky-free; mono labels as section markers like code comments */
+:root{
+  --bg:#f6f7f8; --surface:#ffffff; --fg:#14191f; --muted:#5b6672; --line:#dde2e7;
+  --accent:#0b6e8a; --accent-soft:#e3f1f5; --chip:#eef1f4;
+  --f-display:"Space Grotesk", "IBM Plex Sans", system-ui, sans-serif;
+  --f-body:"IBM Plex Sans", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --f-mono:"IBM Plex Mono", ui-monospace, "SFMono-Regular", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0f1418; --surface:#151c21; --fg:#e6ebef; --muted:#93a0ab; --line:#26313a;
+  --accent:#4fb8d4; --accent-soft:#16303a; --chip:#1c252c; color-scheme:dark}}
+:root[data-theme="dark"]{
+  --bg:#0f1418; --surface:#151c21; --fg:#e6ebef; --muted:#93a0ab; --line:#26313a;
+  --accent:#4fb8d4; --accent-soft:#16303a; --chip:#1c252c; color-scheme:dark}
+
+*{box-sizing:border-box}
+body{background:var(--bg); color:var(--fg); font-family:var(--f-body); font-size:16px; line-height:1.6;
+  padding-left:max(16px, env(safe-area-inset-left,0px)); padding-right:max(16px, env(safe-area-inset-right,0px));
+  padding-block:48px 64px}
+.wrap{max-width:820px; margin:0 auto; display:flex; flex-direction:column; gap:44px}
+a{color:var(--accent); text-decoration:none; border-bottom:1px solid transparent}
+a:hover{border-bottom-color:currentColor}
+a:focus-visible{outline:2px solid var(--accent); outline-offset:3px; border-radius:2px}
+
+.lang{position:absolute; top:0; right:0; display:flex; border:1px solid var(--line); border-radius:6px; overflow:hidden; font-family:var(--f-mono); font-size:13px}
+.lang button{all:unset; cursor:pointer; padding:5px 11px; color:var(--muted)}
+.lang button[aria-pressed="true"]{background:var(--accent-soft); color:var(--accent); font-weight:500}
+.lang button:focus-visible{outline:2px solid var(--accent); outline-offset:-2px}
+header{position:relative; display:flex; flex-direction:column; gap:14px; padding-bottom:32px; border-bottom:1px solid var(--line)}
+.head-top{display:flex; align-items:center; gap:22px; padding-right:96px}
+.head-top > div{min-width:0; display:flex; flex-direction:column; gap:10px}
+.photo{width:112px; height:112px; flex:none; border-radius:50%; object-fit:cover; border:3px solid var(--surface); box-shadow:0 0 0 1px var(--line)}
+@media (max-width:480px){.photo{width:84px; height:84px}.head-top{gap:16px}}
+.role{font-family:var(--f-mono); font-size:13px; color:var(--accent); letter-spacing:.04em}
+h1{font-family:var(--f-display); font-weight:700; font-size:clamp(2.2rem, 6vw, 3.4rem); line-height:1.05; margin:0; letter-spacing:-.02em; text-wrap:balance}
+.lede{margin:0; color:var(--muted); max-width:62ch; font-size:17px}
+.links{display:flex; flex-wrap:wrap; gap:8px; margin-top:6px}
+.ci{display:inline-flex; align-items:center; gap:8px; padding:6px 12px 6px 10px; border:1px solid var(--line); border-radius:999px; background:var(--surface); color:var(--fg); font-size:14px; line-height:1.3; min-width:0; transition:border-color .15s, color .15s}
+.ci svg{width:16px; height:16px; flex:none; fill:none; stroke:var(--accent); stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
+a.ci:hover{border-color:var(--accent); color:var(--accent); border-bottom-color:var(--accent)}
+.ci span{overflow-wrap:anywhere}
+.ci.plain{border-style:dashed; color:var(--muted)}
+.section-ico{width:18px; height:18px; flex:none; padding:5px; box-sizing:content-box; border-radius:6px; background:var(--accent-soft); fill:none; stroke:var(--accent); stroke-width:1.8; stroke-linecap:round; stroke-linejoin:round}
+@media (prefers-reduced-motion: reduce){.ci{transition:none}}
+
+section{display:grid; grid-template-columns:150px 1fr; gap:24px}
+section > h2{font-family:var(--f-mono); font-weight:500; font-size:12.5px; text-transform:uppercase; letter-spacing:.1em; color:var(--muted); margin:4px 0 0}
+section > h2{display:flex; align-items:center; align-self:start; gap:8px; color:var(--fg); margin-top:0}
+.body{min-width:0; display:flex; flex-direction:column; gap:28px}
+
+.item{display:flex; flex-direction:column; gap:8px}
+.item-head{display:flex; flex-wrap:wrap; justify-content:space-between; align-items:baseline; gap:4px 16px}
+h3{font-family:var(--f-display); font-weight:600; font-size:19px; margin:0; line-height:1.3}
+h3 .org{color:var(--muted); font-weight:500}
+.when{font-family:var(--f-mono); font-size:13px; color:var(--muted); font-variant-numeric:tabular-nums; white-space:nowrap}
+ul{margin:0; padding-left:18px; display:flex; flex-direction:column; gap:4px}
+li::marker{color:var(--accent)}
+p{margin:0}
+
+.chips{display:flex; flex-wrap:wrap; gap:6px; margin-top:4px}
+.chip{font-family:var(--f-mono); font-size:12.5px; background:var(--chip); color:var(--fg); padding:3px 9px; border-radius:4px}
+.chip.hl{background:var(--accent-soft); color:var(--accent)}
+
+.highlight{background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:20px 22px}
+
+.projects{display:grid; grid-template-columns:repeat(2, minmax(0,1fr)); gap:14px}
+.proj{background:var(--surface); border:1px solid var(--line); border-radius:8px; padding:16px 18px; display:flex; flex-direction:column; gap:8px}
+.proj h3{font-size:16.5px}
+.proj p{color:var(--muted); font-size:15px}
+.proj.feature{grid-column:1 / -1; border-color:var(--accent); padding:20px 22px}
+.proj.feature h3{font-size:19px}
+.proj.feature .tag{font-family:var(--f-mono); font-size:12px; color:var(--accent); letter-spacing:.06em; text-transform:uppercase}
+.proj.feature ul{color:var(--muted); font-size:15px}
+
+.skills{display:grid; grid-template-columns:140px 1fr; gap:12px 20px; align-items:baseline}
+.skills dt{font-size:14px; color:var(--muted)}
+.skills dd{margin:0; min-width:0}
+
+.other{display:flex; flex-direction:column; gap:10px}
+.other-row{display:grid; grid-template-columns:1fr auto; gap:2px 16px; padding-bottom:10px; border-bottom:1px dashed var(--line)}
+.other-row:last-child{border-bottom:0; padding-bottom:0}
+.other-row .what{font-weight:500}
+.other-row .note{grid-column:1 / -1; color:var(--muted); font-size:15px}
+
+footer{font-family:var(--f-mono); font-size:12.5px; color:var(--muted); border-top:1px solid var(--line); padding-top:20px}
+
+@media (max-width:640px){
+  body{padding-block:28px 48px}
+  section{grid-template-columns:1fr; gap:14px}
+  .projects{grid-template-columns:1fr}
+  .skills{grid-template-columns:1fr; gap:2px}
+  .skills dd{margin-bottom:12px}
+  .other-row{grid-template-columns:1fr}
+}
+</style>
+
+<div class="wrap">
+  <header>
+    <div class="lang" role="group" aria-label="Jezik / Language"><button type="button" id="btn-hr" data-set="hr" aria-pressed="true">HR</button><button type="button" id="btn-en" data-set="en" aria-pressed="false">EN</button></div>
+    <div class="head-top">
+      <img class="photo" src="slika.jpg" alt="Ivan Petar Šolić" onerror="this.remove()">
+      <div>
+        <div class="role">Software Developer</div>
+        <h1>Ivan Petar Šolić</h1>
+      </div>
+    </div>
+    <p class="lede" data-i18n="lede">Prvostupnik inženjer računarstva (bacc. ing. comp.) s iskustvom u razvoju softvera na projektu za Hrvatski Telekom. Najviše me zanimaju backend razvoj i softverska arhitektura: gradim API-je, radim s bazama podataka i razvijam aplikacije u C#/.NET-u, Javi (Spring Boot) i Pythonu.</p>
+    <div class="links">
+      <span class="ci plain"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z"/><circle cx="12" cy="9.5" r="2.5"/></svg><span data-i18n="loc">Zagreb, Hrvatska</span></span>
+      <a class="ci" href="tel:+385924071264"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 4h4l2 5-2.5 1.5a11 11 0 0 0 5 5L15 13l5 2v4a2 2 0 0 1-2 2A16 16 0 0 1 3 6a2 2 0 0 1 2-2z"/></svg><span>+385 92 407 1264</span></a>
+      <a class="ci" href="mailto:ivanpetarsolic1@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg><span>ivanpetarsolic1@gmail.com</span></a>
+      <a class="ci" href="https://www.linkedin.com/in/ivan-petar-%C5%A1oli%C4%87-94b3752bb/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg><span>LinkedIn</span></a>
+      <a class="ci" href="https://github.com/IvanPetar" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 7l-5 5 5 5M16 7l5 5-5 5M13.5 4l-3 16"/></svg><span>GitHub</span></a>
+    </div>
+  </header>
+
+  <section>
+    <h2><svg class="section-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><span data-i18n="h-about">O meni</span></h2>
+    <div class="body">
+      <p data-i18n="about1">Imam oko šest mjeseci radnog iskustva u IT sektoru, na razvoju i održavanju aplikacija u C#/.NET-u i Javi. Radio sam s relacijskim bazama, razvojem API-ja, Azure DevOpsom i CI/CD pipelineovima. Upoznat sam s osnovama velikih jezičnih modela (LLM) i njihovom primjenom u softveru. Želim rasti u smjeru backend inženjerstva, softverske arhitekture i umjetne inteligencije.</p>
+      <p data-i18n="about2">Kontinuirano učim i razvijam svoja znanja kroz vlastite projekte i nove tehnologije.</p>
+      <div class="item">
+        <div class="when" data-i18n="learning">Trenutno učim</div>
+        <div class="chips"><span class="chip hl">Python</span><span class="chip hl" data-i18n="llm">LLM-ovi i njihova primjena u aplikacijama</span></div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><svg class="section-ico" viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="7" width="18" height="13" rx="2"/><path d="M8 7V5a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M3 13h18"/></svg><span data-i18n="h-exp">Iskustvo</span></h2>
+    <div class="body">
+      <div class="item highlight">
+        <div class="item-head">
+          <h3>Software Developer <span class="org">· Attrilio</span></h3>
+          <span class="when">06/2026 – 11/2026</span>
+        </div>
+        <div class="when" data-i18n="parttime">Part-time · Zagreb / remote</div>
+        <ul data-i18n="job">
+          <li>Razvoj i održavanje većih softverskih projekata, uključujući projekt za Hrvatski Telekom (HT).</li>
+          <li>Razvoj aplikacija u C# i .NET-u te rad s relacijskim bazama i SQL-om.</li>
+          <li>Razvoj aplikacija temeljenih na Javi i Spring Bootu.</li>
+          <li>Azure DevOps: Git repozitoriji, grane, Pull Requestovi i razvojni zadaci.</li>
+          <li>Izrada i održavanje CI/CD pipelineova i automatizacija builda i isporuke.</li>
+          <li>Suradnja s razvojnim timom u remote okruženju.</li>
+        </ul>
+        <div class="chips">
+          <span class="chip hl">C#</span><span class="chip hl">.NET</span><span class="chip hl">Java</span><span class="chip hl">Spring Boot</span><span class="chip">SQL</span><span class="chip">Azure DevOps</span><span class="chip">Git</span><span class="chip">CI/CD</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><svg class="section-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 7a2 2 0 0 1 2-2h4l2 2h8a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><path d="M10 11l-2 2 2 2M14 11l2 2-2 2"/></svg><span data-i18n="h-proj">Projekti</span></h2>
+    <div class="body">
+      <div class="projects">
+        <div class="proj feature">
+          <span class="tag" data-i18n="tag">Završni rad · 2026</span>
+          <h3 data-i18n="mp-t">MealPlanner: pametno planiranje prehrane</h3>
+          <p data-i18n="mp-p">Web i mobilna aplikacija na troslojnoj arhitekturi (React / React Native, Spring Boot REST API, PostgreSQL) koja korisniku izrađuje personalizirani prehrambeni plan.</p>
+          <ul data-i18n="mp-ul">
+            <li>Izračun dnevnih kalorija i makronutrijenata (Mifflin-St Jeor) prema profilu i cilju korisnika.</li>
+            <li>AI chat asistent: upiti se obogaćuju profilom, ciljem i dnevnim planom korisnika prije slanja vanjskom AI servisu.</li>
+            <li>Skeniranje proizvoda kamerom, dohvat nutritivnih vrijednosti i upozorenje na alergene iz profila.</li>
+            <li>Bilježenje obroka i prikaz napretka kroz grafikone.</li>
+            <li>Autentikacija sa Spring Security i JWT-om u httpOnly cookieju.</li>
+            <li>Unit, integracijski (REST API) i funkcionalni testovi.</li>
+          </ul>
+          <div class="chips"><span class="chip hl">Java</span><span class="chip hl">Spring Boot</span><span class="chip">Spring Security</span><span class="chip">JWT</span><span class="chip">Hibernate</span><span class="chip">PostgreSQL</span><span class="chip">React</span><span class="chip">React Native</span><span class="chip">Docker</span><span class="chip">AI / LLM</span></div>
+        </div>
+        <div class="proj">
+          <h3 data-i18n="p1t">Fitness aplikacija</h3>
+          <p data-i18n="p1p">Timski razvoj cjelovitog rješenja u agilnom okruženju. Backend u Javi i Spring Bootu, web i mobilno sučelje u Reactu, CI/CD i Docker.</p>
+          <div class="chips"><span class="chip">Spring Boot</span><span class="chip">React</span><span class="chip">Docker</span></div>
+        </div>
+        <div class="proj">
+          <h3 data-i18n="p2t">Integracija sa Supabase API-jem</h3>
+          <p data-i18n="p2p">Spring Boot aplikacija povezana s vanjskim sustavom preko javnog REST API-ja: razmjena i obrada podataka između sustava.</p>
+          <div class="chips"><span class="chip">Java</span><span class="chip">REST</span><span class="chip">Supabase</span></div>
+        </div>
+        <div class="proj">
+          <h3 data-i18n="p3t">Vlastiti ORM i data pipeline</h3>
+          <p data-i18n="p3p">Pristup podacima iz koda u C# i Pythonu: vlastiti ORM, obrada, čišćenje i integracija podataka iz relacijskih i nerelacijskih baza.</p>
+          <div class="chips"><span class="chip">C#</span><span class="chip">Python</span><span class="chip">ORM</span></div>
+        </div>
+        <div class="proj">
+          <h3 data-i18n="p4t">Web aplikacija u ASP.NET MVC-u</h3>
+          <p data-i18n="p4p">Timski razvoj web aplikacije s Web API-jem i MVC-om, uključujući organizaciju i raspodjelu zadataka u timu.</p>
+          <div class="chips"><span class="chip">ASP.NET</span><span class="chip">Web API</span><span class="chip">MVC</span></div>
+        </div>
+        <div class="proj">
+          <h3 data-i18n="p5t">Analiza podataka</h3>
+          <p data-i18n="p5p">Obrada i analiza podataka u Pythonu, prediktivna analiza i clustering za prepoznavanje obrazaca.</p>
+          <div class="chips"><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Matplotlib</span></div>
+        </div>
+        <div class="proj">
+          <h3 data-i18n="p6t">Snake i multiplayer igra</h3>
+          <p data-i18n="p6p">Single-player i multiplayer igre u JavaFX-u; igru Snake izradio sam samostalno.</p>
+          <div class="chips"><span class="chip">Java</span><span class="chip">JavaFX</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><svg class="section-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l9 5-9 5-9-5z"/><path d="M3 13l9 5 9-5"/></svg><span data-i18n="h-skills">Vještine</span></h2>
+    <div class="body">
+      <dl class="skills">
+        <dt data-i18n="dt-lang">Jezici</dt><dd><div class="chips"><span class="chip">C#</span><span class="chip">Java</span><span class="chip">Python</span><span class="chip">C++</span><span class="chip">JavaScript</span></div></dd>
+        <dt>Backend</dt><dd><div class="chips"><span class="chip">.NET</span><span class="chip">ASP.NET Web API</span><span class="chip">MVC</span><span class="chip">Spring Boot</span><span class="chip">REST</span></div></dd>
+        <dt>Frontend</dt><dd><div class="chips"><span class="chip">React</span><span class="chip">HTML</span><span class="chip">CSS</span><span class="chip">Bootstrap</span></div></dd>
+        <dt data-i18n="dt-db">Baza podataka</dt><dd><div class="chips"><span class="chip" data-i18n="c-rel">SQL</span><span class="chip" data-i18n="c-rel">PostgreSQL</span><span class="chip" data-i18n="c-rel">Relacijske</span><span class="chip" data-i18n="c-nonrel">Nerelacijske</span><span class="chip">ORM</span></div></dd>
+        <dt>DevOps</dt><dd><div class="chips"><span class="chip">Azure DevOps</span><span class="chip">Git</span><span class="chip">CI/CD</span><span class="chip">Docker</span></div></dd>
+        <dt data-i18n="dt-princ">Principi</dt><dd><div class="chips"><span class="chip">OOP</span><span class="chip">SOLID</span><span class="chip">Design patterns</span><span class="chip" data-i18n="c-arch">Arhitektura</span><span class="chip" data-i18n="c-algo">Algoritmi i strukture podataka</span><span class="chip" data-i18n="c-tests">Unit i integracijski testovi</span><span class="chip">Agile</span><span class="chip">Scrum</span></div></dd>
+        <dt data-i18n="dt-data">Data i AI</dt><dd><div class="chips"><span class="chip">Pandas</span><span class="chip">NumPy</span><span class="chip">Matplotlib</span><span class="chip" data-i18n="c-llm">Osnove LLM-ova</span></div></dd>
+      </dl>
+    </div>
+  </section>
+
+  <section>
+    <h2><svg class="section-ico" viewBox="0 0 24 24" aria-hidden="true"><path d="M2 9l10-5 10 5-10 5z"/><path d="M6 11v5c3 2.5 9 2.5 12 0v-5M22 9v6"/></svg><span data-i18n="h-edu">Obrazovanje</span></h2>
+    <div class="body">
+      <div class="item">
+        <div class="item-head">
+          <h3 data-i18n="edu-t">Programsko inženjerstvo <span class="org">· Algebra Bernays</span></h3>
+          <span class="when">10/2023 – 10/2026</span>
+        </div>
+        <p data-i18n="edu-p"><strong>Prvostupnik inženjer računarstva (bacc. ing. comp.)</strong>. Stručni prijediplomski studij Primijenjeno računarstvo, smjer programsko inženjerstvo, Zagreb. Završni rad: <em>Razvoj programskog rješenja za pametno planiranje prehrane</em>. </p>
+        <ul data-i18n="edu-ul">
+          <li>Razvoj web i desktop aplikacija u C#/.NET-u (OOP, ASP.NET Web API, MVC).</li>
+          <li>Java i Spring Boot: REST API-ji i integracija s vanjskim sustavima.</li>
+          <li>Relacijske i nerelacijske baze podataka, napredni SQL i ORM.</li>
+          <li>Algoritmi i strukture podataka u C++-u.</li>
+          <li>Programsko inženjerstvo: Agile (Scrum) i Waterfall, dizajnerski obrasci, SOLID, unit i integracijsko testiranje, deployment na server.</li>
+          <li>DevOps: CI/CD i Docker kroz timske projekte.</li>
+          <li>Analiza podataka u Pythonu (Pandas, NumPy), prediktivna analiza i clustering.</li>
+          <li>Web tehnologije: HTML, CSS, JavaScript i React.</li>
+        </ul>
+      </div>
+      <div class="item">
+        <div class="item-head">
+          <h3 data-i18n="school">Nadbiskupijska klasična gimnazija don Frane Bulić</h3>
+          <span class="when">2017 – 2022 · Split</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><svg class="section-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="5" r="2"/><path d="M12 7v14M5 12H3a9 9 0 0 0 18 0h-2M8 10h8"/></svg><span data-i18n="h-other">Ostalo iskustvo</span></h2>
+    <div class="body other">
+      <div class="other-row">
+        <span class="what" data-i18n="o1w">Konobar · Restaurant Mediteraneo</span><span class="when">07/2024 – 10/2024</span>
+        <span class="note" data-i18n="o1n">Velik broj narudžbi pod pritiskom, rad s gostima i rješavanje pritužbi.</span>
+      </div>
+      <div class="other-row">
+        <span class="what" data-i18n="o2w">Mornar · Yachts Mlini</span><span class="when">04/2023 – 07/2023</span>
+        <span class="note" data-i18n="o2n">Jedan od dvojice mornara na jahti: odgovornost, održavanje i komunikacija u posadi.</span>
+      </div>
+      <div class="other-row">
+        <span class="what" data-i18n="o3w">Mornar pripravnik · Ivan Cruising</span><span class="when">05/2022 – 07/2022</span>
+        <span class="note" data-i18n="o3n">Najmlađi član posade; timski rad i disciplina u zahtjevnim uvjetima.</span>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2><svg class="section-ico" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg><span data-i18n="h-langs">Jezici</span></h2>
+    <div class="body">
+      <p data-i18n="langs"><strong>Hrvatski</strong> — materinski &nbsp;·&nbsp; <strong>Engleski</strong> — C1</p>
+      <p style="color:var(--muted)" data-i18n="drive">Vozačka dozvola B kategorije</p>
+    </div>
+  </section>
+
+  <footer data-i18n="footer">Zadnje ažurirano: studeni 2026.</footer>
+</div>
+
+<script>
+(function(){
+  var EN = {
+    "lede":"Bachelor of Engineering in Computing (bacc. ing. comp.) with software development experience on a project for Hrvatski Telekom. I'm most interested in backend development and software architecture: I build APIs, work with databases and develop applications in C#/.NET, Java (Spring Boot) and Python.",
+    "loc":"Zagreb, Croatia",
+    "h-about":"About me",
+    "about1":"I have about six months of professional experience in IT, developing and maintaining applications in C#/.NET and Java. I've worked with relational databases, API development, Azure DevOps and CI/CD pipelines. I'm familiar with the fundamentals of large language models (LLMs) and how they are used in software. I want to grow in backend engineering, software architecture and artificial intelligence.",
+    "about2":"I keep learning and expanding my skills through my own projects and new technologies.",
+    "learning":"Currently learning",
+    "llm":"LLMs and their use in applications",
+    "h-exp":"Experience",
+    "parttime":"Part-time · Zagreb / remote",
+    "job":"<li>Developing and maintaining large software projects, including a project for Hrvatski Telekom (HT).</li><li>Building applications in C# and .NET and working with relational databases and SQL.</li><li>Developing applications based on Java and Spring Boot.</li><li>Azure DevOps: Git repositories, branches, pull requests and work items.</li><li>Building and maintaining CI/CD pipelines and automating builds and delivery.</li><li>Collaborating with the development team in a remote environment.</li>",
+    "h-proj":"Projects",
+    "tag":"Bachelor's thesis · 2026",
+    "mp-t":"MealPlanner: smart meal planning",
+    "mp-p":"Web and mobile application on a three-tier architecture (React / React Native, Spring Boot REST API, PostgreSQL) that creates a personalised meal plan for each user.",
+    "mp-ul":"<li>Daily calorie and macronutrient calculation (Mifflin-St Jeor) based on the user's profile and goal.</li><li>AI chat assistant: queries are enriched with the user's profile, goal and daily plan before being sent to an external AI service.</li><li>Product scanning with the camera, nutrition data lookup and allergen warnings based on the user's profile.</li><li>Meal logging and progress tracking with charts.</li><li>Authentication with Spring Security and JWT in an httpOnly cookie.</li><li>Unit, integration (REST API) and functional tests.</li>",
+    "p1t":"Fitness application","p1p":"Team development of a full application in an agile environment. Backend in Java and Spring Boot, web and mobile UI in React, CI/CD and Docker.",
+    "p2t":"Supabase API integration","p2p":"Spring Boot application connected to an external system through a public REST API: exchanging and processing data between systems.",
+    "p3t":"Custom ORM and data pipeline","p3p":"Data access from code in C# and Python: a custom ORM, plus processing, cleaning and integrating data from relational and non-relational databases.",
+    "p4t":"ASP.NET MVC web application","p4p":"Team development of a web application with Web API and MVC, including organising and assigning tasks within the team.",
+    "p5t":"Data analysis","p5p":"Data processing and analysis in Python, predictive analysis and clustering to find patterns.",
+    "p6t":"Snake and multiplayer game","p6p":"Single-player and multiplayer games in JavaFX; I built the Snake game on my own.",
+    "h-skills":"Skills",
+    "dt-lang":"Languages","dt-db":"Databases","c-rel":"Relational","c-nonrel":"Non-relational",
+    "dt-princ":"Principles","c-arch":"Architecture","c-algo":"Algorithms and data structures","c-tests":"Unit and integration testing",
+    "dt-data":"Data and AI","c-llm":"LLM fundamentals",
+    "h-edu":"Education",
+    "edu-t":"Software Engineering <span class=\"org\">· Algebra Bernays University</span>",
+    "edu-p":"<strong>Bachelor of Engineering in Computing (bacc. ing. comp.)</strong>. Professional undergraduate study programme in Applied Computing, Software Engineering track, Zagreb. Thesis: <em>Development of a software solution for smart meal planning</em>.",
+    "edu-ul":"<li>Web and desktop application development in C#/.NET (OOP, ASP.NET Web API, MVC).</li><li>Java and Spring Boot: REST APIs and integration with external systems.</li><li>Relational and non-relational databases, advanced SQL and ORM.</li><li>Algorithms and data structures in C++.</li><li>Software engineering: Agile (Scrum) and Waterfall, design patterns, SOLID, unit and integration testing, server deployment.</li><li>DevOps: CI/CD and Docker in team projects.</li><li>Data analysis in Python (Pandas, NumPy), predictive analysis and clustering.</li><li>Web technologies: HTML, CSS, JavaScript and React.</li>",
+    "school":"Don Frane Bulić Archdiocesan Classical Gymnasium",
+    "h-other":"Other experience",
+    "o1w":"Waiter · Restaurant Mediteraneo","o1n":"High order volume under pressure, guest service and handling complaints.",
+    "o2w":"Deckhand · Yachts Mlini","o2n":"One of two deckhands on a yacht: responsibility, maintenance and crew communication.",
+    "o3w":"Deckhand trainee · Ivan Cruising","o3n":"Youngest crew member; teamwork and discipline in demanding conditions.",
+    "h-langs":"Languages",
+    "langs":"<strong>Croatian</strong> — native &nbsp;·&nbsp; <strong>English</strong> — C1",
+    "drive":"Driving licence, category B",
+    "footer":"Last updated: November 2026."
+  };
+  var nodes = document.querySelectorAll("[data-i18n]");
+  var HR = {};
+  nodes.forEach(function(n){ HR[n.dataset.i18n] = n.innerHTML; });
+  function setLang(l){
+    var dict = l === "en" ? EN : HR;
+    nodes.forEach(function(n){ var v = dict[n.dataset.i18n]; if (v != null) n.innerHTML = v; });
+    document.documentElement.lang = l;
+    document.getElementById("btn-hr").setAttribute("aria-pressed", l === "hr");
+    document.getElementById("btn-en").setAttribute("aria-pressed", l === "en");
+    try { localStorage.setItem("cv-lang", l); } catch(e){}
+  }
+  document.querySelectorAll(".lang button").forEach(function(b){
+    b.addEventListener("click", function(){ setLang(b.dataset.set); try { history.replaceState(null, "", b.dataset.set === "en" ? "#en" : location.pathname); } catch(e){} });
+  });
+  var start = "hr";
+  if (location.hash === "#en") start = "en";
+  else { try { if (localStorage.getItem("cv-lang") === "en") start = "en"; } catch(e){} }
+  if (start === "en") setLang("en");
+  window.addEventListener("hashchange", function(){ setLang(location.hash === "#en" ? "en" : "hr"); });
+})();
+</script>
